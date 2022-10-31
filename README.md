@@ -5,7 +5,7 @@ Konda Shivaradhan Lab 10 and Assignment 10
 Class Seleted <b>Institution</b>
 | Attribute | type | 
 | -------| -----------|
-|Institution_Name|String|
-|Institution_loc|String|
-|Institution_pop|Number|
+|institution_Name|String|
+|institution_loc|String|
+|institution_pop|Number|
 <br>

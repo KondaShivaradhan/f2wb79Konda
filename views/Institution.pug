@@ -1,0 +1,20 @@
+extends layout
+
+block content
+  - let results = [  {    "institution_Name": "Sri Chaitanya",    "institution_loc": "Hyderabad",    "institution_pop": 34000 }, {    "institution_Name": "University of Central Missouri",    "institution_loc": "Kansas",    "institution_pop": 34323423 },{    "institution_Name": "Northwest Missouri State University",    "institution_loc": "Mariville",    "institution_pop": 1234234 } ]
+  h1= title
+  .container-fuild 
+    .row 
+      - results.forEach(val=>{
+        .col-sm-2
+          - Object.values(val).forEach(institute=>{
+            = " " +institute
+          -})
+      -})
+  //- .container-fluid 
+  //-   .row 
+  //-     each vale in results
+  //-       .col-sm-2
+  //-       each val in vale 
+  //-         = " " +val
+
