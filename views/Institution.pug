@@ -1,20 +1,55 @@
 extends layout
 
 block content
-  - let results = [  {    "institution_Name": "University of North Texas",    "institution_loc": "Texas",    "institution_pop": 534000 },{    "institution_Name": "Indian Institute of Technology",    "institution_loc": "Karagpur",    "institution_pop": 100000 },{    "institution_Name": "Sri Chaitanya",    "institution_loc": "Hyderabad",    "institution_pop": 34000 }, {    "institution_Name": "University of Central Missouri",    "institution_loc": "Kansas",    "institution_pop": 34323423 },{    "institution_Name": "Northwest Missouri State University",    "institution_loc": "Mariville",    "institution_pop": 1234234 } ]
+  -
+   let results =[
+      {
+        "institution_Name": "University of North Texas",
+        "institution_loc": "Texas",
+        "institution_pop": 534000
+      },
+      {
+        "institution_Name": "Indian Institute of Technology",
+        "institution_loc": "Karagpur",
+        "institution_pop": 100000
+      },
+      {
+        "institution_Name": "Sri Chaitanya",
+        "institution_loc": "Hyderabad",
+        "institution_pop": 340020
+      },
+      {
+        "institution_Name": "University of Central Missouri",
+        "institution_loc": "Kansas",
+        "institution_pop": 34323423
+      },
+      {
+        "institution_Name": "Northwest Missouri State University",
+        "institution_loc": "Mariville",
+        "institution_pop": 1234234
+      }
+    ]
   h1= title
-  .container-fuild 
-    .row 
-      - results.forEach(val=>{
-        .col-sm-2
-          - Object.values(val).forEach(institute=>{
-            = " " +institute
-          -})
-      -})
-  //- .container-fluid 
+  style.
+    #st{
+      text-align:center
+    }
+  //- .container-fuild 
   //-   .row 
-  //-     each vale in results
-  //-       .col-sm-2
-  //-       each val in vale 
-  //-         = " " +val
+  //-     - results.forEach(key=>{
+  //-       div(class="col-sm-2" style=`border:solid 2px black` onclick=`buy(${results.indexOf(key)})`)
+  //-         - Object.values(key).forEach(institute=>{
+  //-           = " " +institute
+  //-         -})
+  //-     -})
+  .container-fluid 
+    .row 
+      each institute in results
+        div(class="col-sm-2" style=`border:solid 2px black` onclick=`buy(${results.indexOf(institute)})`) 
+          each value,key in institute 
+            = " " +value
+  script.
+    function buy(index){
+      alert("You purchased item "+index)
+    }
 
