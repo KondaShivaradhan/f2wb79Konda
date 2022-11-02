@@ -30,18 +30,6 @@ block content
       }
     ]
   h1= title
-  style.
-    #st{
-      text-align:center
-    }
-  //- .container-fuild 
-  //-   .row 
-  //-     - results.forEach(key=>{
-  //-       div(class="col-sm-2" style=`border:solid 2px black` onclick=`buy(${results.indexOf(key)})`)
-  //-         - Object.values(key).forEach(institute=>{
-  //-           = " " +institute
-  //-         -})
-  //-     -})
   .container-fluid 
     .row 
       each institute in results
